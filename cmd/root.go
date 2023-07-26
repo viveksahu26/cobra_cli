@@ -1,5 +1,5 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
+Copyright © 2023 Vivek Kumar Sahu  viveksahu650@gmail.com
 */
 package cmd
 
@@ -11,19 +11,20 @@ import (
 	"github.com/spf13/viper"
 )
 
-var cfgFile string
+var cfgFile string = "cipher_cli.yaml"
 
 // rootCmd represents the base command when called without any subcommands
 func New() *cobra.Command {
 	rootCmd := &cobra.Command{
-		Use:   "cobra_cli",
-		Short: "A brief description of your application",
-		Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
+		Use:   "viver",
+		Short: "Encrypt and decrypt secret messages in seconds!!!",
+		Long: `This application encrypts and decrypts secret messages with ease. 
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+Try out the Caesar and Bacon Cipher options to generate secret messages and share with your inner circle
+
+cipher_cli encrypt "Welcome to the hallowed chambers" --algorithm=caesar --key=54
+
+cipher_cli encrypt "Welcome to the hallowed chambers" --algorithm=bacon`,
 		// Uncomment the following line if your bare application
 		// has an action associated with it:
 		// Run: func(cmd *cobra.Command, args []string) { },
@@ -47,7 +48,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	New().PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cobra_cli.yaml)")
+	New().PersistentFlags().StringP("key", "k", "", "The key to pass for the algorithm")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
