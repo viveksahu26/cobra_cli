@@ -1,7 +1,4 @@
-/*
-Copyright © 2023 Vivek Kumar Sahu  viveksahu650@gmail.com
-*/
-package cmd
+package cli
 
 import (
 	"fmt"
