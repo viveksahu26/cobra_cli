@@ -28,6 +28,8 @@ func Encrypt(plaintext string, rotations int) string {
 	return ciphertext
 }
 
+// decrypt gets the Plaintext character present at new index.
+// The new index is obtained by reverse-rotating the cipher character index by rotation value.
 func Decrypt(ciphertext string, rotations int) string {
 	var plaintext string
 	for _, character := range ciphertext {
